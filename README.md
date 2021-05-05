@@ -18,6 +18,10 @@ inputs:
     description: 'allow max pr size.'
     required: true
     default: '500'
+  filter_pattern:
+    # https://github.com/google/re2/wiki/Syntax
+    description: 'ignore file name by the regular expression syntax accepted by RE2'
+    required: false
 ```
 
 ## Usage
@@ -34,6 +38,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           max_added_count: 300
+          filter_pattern: "go.mod|go.sum|.*_test.go|.*.md|.*.golden|.*.yml"
 ```
 
 ## Development

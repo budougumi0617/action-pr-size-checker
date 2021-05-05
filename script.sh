@@ -15,6 +15,7 @@ echo '::endgroup::'
 
 export GIGI_GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
 export GIGI_MAX_ADDED_COUNT="${INPUT_MAX_ADDED_COUNT:-500}"
+export GIGI_FILTER_PATTERN="${INPUT_FILTER_PATTERN}"
 
 echo '::group:: Running gigi ...'
 # shellcheck disable=SC2086
