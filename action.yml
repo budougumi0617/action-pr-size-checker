@@ -1,0 +1,25 @@
+name: 'action-pr-size-checker'
+description: 'Verify pull request size without sepecified file names'
+author: 'budougumi0617'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+    default: ${{ github.token }}
+  max_added_count:
+    description: 'allow max pr size.'
+    required: true
+    default: '500'
+runs:
+  using: 'composite'
+  steps:
+    - run: $GITHUB_ACTION_PATH/script.sh
+      shell: bash
+      env:
+        # INPUT_<VARIABLE_NAME> is not available in Composite run steps
+        # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
+        INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        INPUT_MAX_ADDED_COUNT: ${{ inputs.max_added_count }}
+branding:
+  icon: 'check-circle'
+  color: 'blue'
