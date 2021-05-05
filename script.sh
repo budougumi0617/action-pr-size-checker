@@ -20,6 +20,6 @@ export GIGI_FILTER_PATTERN="${INPUT_FILTER_PATTERN}"
 echo '::group:: Running gigi ...'
 # shellcheck disable=SC2086
 gigi
-status=$($?)
+status=$?
 echo '::endgroup::'
 exit $status
