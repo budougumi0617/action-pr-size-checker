@@ -10,6 +10,10 @@ inputs:
     description: 'allow max pr size.'
     required: true
     default: '500'
+  filter_pattern:
+    # https://github.com/google/re2/wiki/Syntax
+    description: 'ignore file name by the regular expression syntax accepted by RE2'
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -20,6 +24,7 @@ runs:
         # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
         INPUT_MAX_ADDED_COUNT: ${{ inputs.max_added_count }}
+        INPUT_FILTER_PATTERN: ${{ inputs.filter_pattern }}
 branding:
   icon: 'check-circle'
   color: 'blue'
