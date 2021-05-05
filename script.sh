@@ -14,9 +14,11 @@ curl -L "$(curl -Ls https://api.github.com/repos/budougumi0617/gigi/releases/lat
 echo '::endgroup::'
 
 export GIGI_GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
-export GIGI_MAX_ADDED_COUNT="${INPUT_MAX_ADDED_COUNT}"
+export GIGI_MAX_ADDED_COUNT="${INPUT_MAX_ADDED_COUNT:-500}"
 
 echo '::group:: Running gigi ...'
 # shellcheck disable=SC2086
 gigi
+status=$($?)
 echo '::endgroup::'
+exit $status
