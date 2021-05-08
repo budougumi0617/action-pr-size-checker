@@ -1,5 +1,5 @@
 name: 'action-pr-size-checker'
-description: 'Verify pull request size without sepecified file names'
+description: 'Verify pull request size without specified files by file name.'
 author: 'budougumi0617'
 inputs:
   github_token:

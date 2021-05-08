@@ -4,7 +4,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/budougumi0617/action-pr-size-checker?logo=github&sort=semver)](https://github.com/budougumi0617/action-pr-size-checker/releases)
 
 
-Verify pull request size without sepecified file names.
+Verify pull request size without specified files by file name.
 
 ## Input
 
