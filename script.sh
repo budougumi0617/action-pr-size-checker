@@ -7,7 +7,7 @@ PATH="${TEMP_PATH}:$PATH"
 
 echo '::group:: Installing gigi ... https://github.com/budougumi0617/gigi'
 echo "info: $(curl -Ls https://api.github.com/repos/budougumi0617/gigi/releases/latest | grep html_url.*tag)"
-curl -L "$(curl -Ls https://api.github.com/repos/budougumi0617/gigi/releases/latest | grep -o -E "https://.+?_Linux_x86_64.tar.gz")" -o gigi.tar.gz && tar -zxvf gigi.tar.gz -C "${TEMP_PATH}" && rm gigi.tar.gz
+curl -L "$(curl -Ls https://api.github.com/repos/budougumi0617/gigi/releases/latest | grep -o -E "https://.+?_linux_amd64.tar.gz")" -o gigi.tar.gz && tar -zxvf gigi.tar.gz -C "${TEMP_PATH}" && rm gigi.tar.gz
 echo '::endgroup::'
 
 export GIGI_GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
@@ -20,3 +20,4 @@ gigi
 status=$?
 echo '::endgroup::'
 exit $status
+
